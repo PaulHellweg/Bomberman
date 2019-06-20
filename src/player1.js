@@ -10,6 +10,7 @@ class Player1 {
   }
   setup() {
     defaultDownPlayer1 = loadImage("assets/DownDefaultPlayer1.png");
+    hit = loadImage("assets/Hit.png");
   }
 
   draw() {

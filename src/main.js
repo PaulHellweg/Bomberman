@@ -14,7 +14,7 @@ function preload() {
   obstacle = loadImage("assets/Obstacle.png");
   floor = loadImage("assets/Floor.png");
   brick = loadImage("assets/Brick.png");
-  hit = loadImage("assets/hit.png");
+  hit = loadImage("assets/Hit.png");
   gameOver = loadImage("assets/GameOver.png");
   pressEnter = loadImage("assets/PressEnterToStart.png");
 }

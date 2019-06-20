@@ -11,7 +11,7 @@ class Player {
   }
   setup() {
     defaultDown = loadImage("assets/DownDefault.png");
-    hit = loadImage("assets/hit.png");
+    hit = loadImage("assets/Hit.png");
   }
 
   draw() {
