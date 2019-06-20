@@ -7,17 +7,72 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Bomberman</title>
   </head>
-  <body>
+  <body class="body">
     <h1>Bomberman</h1>
     <div class="game">
-      <div id="canvas"></div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
-      <script src="./src/constants.js"></script>
-      <script src="./src/player.js"></script>
-      <script src="./src/player1.js"></script>
-      <script src="./src/bomb.js"></script>
-      <script src="./src/game.js"></script>
-      <script src="./src/main.js"></script>
+      <div class="container">
+        <div class="instruction">
+          <div class="instuctionListPOne">
+            <ul>
+              <li><h3>Player 1</h3></li>
+              <li>
+                <p>Move Up:</p>
+                <p>ARROW UP</p>
+              </li>
+              <li>
+                <p>Move Down:</p>
+                <p>ARROW DOWN</p>
+              </li>
+              <li>
+                <p>Move Right:</p>
+                <p>ARROW RIGHT</p>
+              </li>
+              <li>
+                <p>Move Left:</p>
+                <p>ARROW LEFT</p>
+              </li>
+              <li>
+                <p>Plant Bomb:</p>
+                <p>PUSH /</p>
+              </li>
+            </ul>
+          </div>
+          <div id="canvas"></div>
+
+          <div class="instructionListPTwo">
+            <ul>
+              <li><h3>Player 2</h3></li>
+              <li>
+                <p>Move Up:</p>
+                <p>PUSH W</p>
+              </li>
+              <li>
+                <p>Move Down:</p>
+                <p>PUSH S</p>
+              </li>
+              <li>
+                <p>Move Right:</p>
+                <p>PUSH D</p>
+              </li>
+              <li>
+                <p>Move Left:</p>
+                <p>PUSH A</p>
+              </li>
+              <li>
+                <p>Plant Bomb:</p>
+                <p>PUSH R</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+    <script src="./src/constants.js"></script>
+    <script src="./src/player.js"></script>
+    <script src="./src/player1.js"></script>
+    <script src="./src/bomb.js"></script>
+    <script src="./src/game.js"></script>
+    <script src="./src/main.js"></script>
   </body>
 </html>

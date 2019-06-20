@@ -2,24 +2,28 @@ class Player {
   constructor(row, col) {
     this.row = row;
     this.col = col;
-    this.health = 1;
+    this.health = 2;
     this.bombLim = 1;
-    this.bombRad = 1;
+    this.bombRad = 3;
+    this.bombSoftR = 1;
     this.movLim = 1;
     this.bombArray = [];
   }
   setup() {
     defaultDown = loadImage("assets/DownDefault.png");
+    hit = loadImage("assets/hit.png");
   }
 
   draw() {
-    fill("lime");
-    rect(this.col * 100 + 30, this.row * 100 + 30, 30, 30);
-    image(defaultDown, this.col * 100 + 8, this.row * 100 + 15, 70, 70);
+    image(defaultDown, this.col * 50 + 4, this.row * 50 + 7.5, 35, 35);
     this.bombArray.forEach(bomb => {
       bomb.draw();
       bomb.explosion();
     });
+    if (this.health <= 0) {
+      game.gameOver();
+      image(hit, this.col * 50 + 4, this.row * 50 + 7.5, 35, 35);
+    }
   }
   createBomb() {
     if (this.bombLim >= this.bombArray.length) {
@@ -29,8 +33,6 @@ class Player {
   healthDetection() {
     if (this.Player(row, col) === this.bombRad) {
       this.health - 1;
-    }
-    if (this.health >= 0) {
     }
   }
 

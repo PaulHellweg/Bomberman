@@ -9,12 +9,14 @@ class Bomb {
   }
 
   draw() {
-    image(bomb, this.col * 100 + 25, this.row * 100 + 35, 50, 50);
-    rect(this.col * 100 + 50, this.row * 100 + 50, 10, 10);
+    image(bomb, this.col * 50 + 12.5, this.row * 50 + 17.5, 25, 25);
   }
   checkPlayer(y, x) {
     if (game.player.col === x && game.player.row === y) {
       game.player.health -= 1;
+    }
+    if (game.player1.col === x && game.player1.row === y) {
+      game.player1.health -= 1;
     }
   }
   explosion() {
@@ -25,7 +27,7 @@ class Bomb {
           break;
         } else if (game.gameBoard[this.row][i] === 2) {
           game.gameBoard[this.row][i] = 3;
-          setTimeout(() => (game.gameBoard[this.row][i] = 4), 500);
+          setTimeout(() => (game.gameBoard[this.row][this.col + 1] = 4), 500);
         } else {
           game.gameBoard[this.row][i] = 3;
           setTimeout(() => (game.gameBoard[this.row][i] = 4), 500);
@@ -33,7 +35,7 @@ class Bomb {
         this.checkPlayer(this.row, i);
       }
       //left direction explosion
-      for (let i = this.col + 1; i >= this.col - this.bombRad; i--) {
+      for (let i = this.col - 1; i >= this.col - this.bombRad; i--) {
         if (game.gameBoard[this.row][i] === 1) {
           break;
         } else if (game.gameBoard[this.row][i] === 2) {
@@ -61,7 +63,7 @@ class Bomb {
         this.checkPlayer(j, this.col);
       }
       //up direction explosion
-      for (let j = this.row + 1; j >= this.row - this.bombRad; j--) {
+      for (let j = this.row - 1; j >= this.row - this.bombRad; j--) {
         if (game.gameBoard[j][this.col] === 1) {
           break;
         } else if (game.gameBoard[j][this.col] === 2) {
@@ -73,8 +75,9 @@ class Bomb {
         }
         this.checkPlayer(j, this.col);
       }
+
       game.player.bombArray.pop();
-      console.log(game.player);
+      game.player1.bombArray.pop();
     }, 2000);
   }
 }
