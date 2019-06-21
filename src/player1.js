@@ -6,19 +6,28 @@ class Player1 {
     this.bombLim = 1;
     this.bombRad = 3;
     this.movLim = 1;
+    this.bombSoftR = 1;
     this.orientation = "down";
     this.bombArray = [];
   }
+
   setup() {
     defaultDown = loadImage("assets/DownDefault.png");
     walkUp = loadImage("assets/UpDefault.png");
     right = loadImage("assets/RightWalkDefault.png");
     left = loadImage("assets/WalkLeftDefault.png");
-
     hit = loadImage("assets/Hit.png");
   }
 
   draw() {
+    this.bombArray.forEach(bomb => {
+      bomb.draw();
+      bomb.explosion();
+    });
+    if (this.health <= 0) {
+      game.gameOver();
+      image(hit, this.col * 50 + 4, this.row * 50 + 7.5, 35, 35);
+    }
     if (this.orientation == "down")
       image(defaultDown, this.col * 50 + 4, this.row * 50 + 7.5, 35, 35);
     if (this.orientation == "up")
@@ -83,7 +92,7 @@ class Player1 {
       this.orientation = "left";
     }
 
-    if (keyCode === 82) {
+    if (keyCode === 69) {
       this.createBomb();
     }
   }

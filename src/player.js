@@ -46,6 +46,9 @@ class Player {
     if (this.Player(row, col) === this.bombRad) {
       this.health - 1;
     }
+    if (this.health >= 0) {
+      game.gameOver1();
+    }
   }
 
   keyPressed() {
