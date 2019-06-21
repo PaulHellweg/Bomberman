@@ -17,6 +17,10 @@ function preload() {
   hit = loadImage("assets/Hit.png");
   gameOver = loadImage("assets/GameOver.png");
   pressEnter = loadImage("assets/PressEnterToStart.png");
+  walkUp = loadImage("assets/UpDefault.png");
+  right = loadImage("assets/RightWalkDefault.png");
+  left = loadImage("assets/WalkLeftDefault.png");
+  hit1 = loadImage("assets/Hit1.png");
 }
 
 function draw() {

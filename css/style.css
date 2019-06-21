@@ -39,6 +39,12 @@ li {
   justify-content: space-around;
   text-align: center;
 }
+.min {
+  color: red;
+  font-size: 0.3rem;
+  display: flex;
+  text-align: center;
+}
 
 #canvas {
   margin: 0 50px;
